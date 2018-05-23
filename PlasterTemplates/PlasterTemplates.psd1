@@ -6,6 +6,8 @@
         'Plaster'
     )
     FunctionsToExport = @(
+        'Invoke-PlasterTemplate'
+        'New-PowershellModule'
     )
     AliasesToExport = @()
 }
