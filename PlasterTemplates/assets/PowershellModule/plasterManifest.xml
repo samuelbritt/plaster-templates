@@ -1,7 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<plasterManifest
-  schemaVersion="1.1"
-  templateType="Project" xmlns="http://www.microsoft.com/schemas/PowerShell/Plaster/v1">
+<plasterManifest schemaVersion="1.1" templateType="Project"
+  xmlns="http://www.microsoft.com/schemas/PowerShell/Plaster/v1">
   <metadata>
     <name>PowershellModule</name>
     <id>2a5154d7-c86b-463a-89ff-652a7c3a04a9</id>
@@ -11,6 +10,23 @@
     <author></author>
     <tags></tags>
   </metadata>
-  <parameters></parameters>
-  <content></content>
+  <parameters>
+    <parameter name='ModuleName' type='text' prompt='Enter the name of the module'/>
+    <!-- <parameter name='Path' type='text' prompt='Enter the path to the module'/> -->
+  </parameters>
+  <content>
+    <message>Scaffolding your PowerShell Module...</message>
+    <message>creating folders...</message>
+    <file source='' destination='${PLASTER_PARAM_ModuleName}'/>
+    <file source='' destination='${PLASTER_PARAM_ModuleName}\functions'/>
+    <file source='' destination='${PLASTER_PARAM_ModuleName}\globals'/>
+    <file source='' destination='${PLASTER_PARAM_ModuleName}\tests'/>
+
+    <message>creating files...</message>
+    <templateFile source='Module\functions\Invoke-Module.ps1' destination='${PLASTER_PARAM_ModuleName}\functions\Invoke-${PLASTER_PARAM_ModuleName}.ps1'/>
+    <templateFile source='Module\globals\Errors.ps1' destination='${PLASTER_PARAM_ModuleName}\globals\Errors.ps1'/>
+    <templateFile source='Module\tests\Invoke-Module.Unit.Tests.Template.ps1' destination='${PLASTER_PARAM_ModuleName}\tests\Invoke-${PLASTER_PARAM_ModuleName}.Unit.Tests.ps1'/>
+    <templateFile source='Module\Module.psm1' destination='${PLASTER_PARAM_ModuleName}\${PLASTER_PARAM_ModuleName}.psm1'/>
+    <templateFile source='Module\Module.psd1' destination='${PLASTER_PARAM_ModuleName}\${PLASTER_PARAM_ModuleName}.psd1'/>
+  </content>
 </plasterManifest>
