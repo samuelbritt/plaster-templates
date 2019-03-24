@@ -3,7 +3,7 @@ function Invoke-PlasterTemplate
     [CmdletBinding()]
     param(
         [Parameter(Mandatory)]
-        [ValidateSet('PowershellModule')]
+        [ValidateSet('PowershellModule', 'OpenApi')]
         [string] $Name,
 
         [Parameter()]

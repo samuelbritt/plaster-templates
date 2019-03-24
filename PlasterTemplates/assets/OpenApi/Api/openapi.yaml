@@ -1,0 +1,14 @@
+openapi: 3.0.0
+info:
+  title: <%= $PLASTER_PARAM_ApiName %> api
+  version: 1.0.0
+tags: []
+paths: {}
+components:
+  schemas: {}
+  parameters: {}
+  requestBodies: {}
+  responses: {}
+  examples: {}
+  headers: {}
+  links: {}

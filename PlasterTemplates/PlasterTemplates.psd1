@@ -8,6 +8,7 @@
     FunctionsToExport = @(
         'Invoke-PlasterTemplate'
         'New-PowershellModule'
+        'New-OpenApi'
     )
     AliasesToExport = @()
 }

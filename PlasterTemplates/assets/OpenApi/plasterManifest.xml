@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<plasterManifest schemaVersion="1.1" templateType="Project"
+  xmlns="http://www.microsoft.com/schemas/PowerShell/Plaster/v1">
+  <metadata>
+    <name>OpenApi</name>
+    <id>965923c6-22ef-4805-ab7c-3ce26201fd4b</id>
+    <version>1.0.0</version>
+    <title>OpenApi</title>
+    <description></description>
+    <author></author>
+    <tags></tags>
+  </metadata>
+  <parameters>
+    <parameter name='ApiName' type='text' prompt='Enter the name of the api'/>
+  </parameters>
+  <content>
+    <message>Scaffolding your Api...</message>
+    <message>creating folders...</message>
+    <file source='' destination='${PLASTER_PARAM_ApiName}'/>
+    <file source='' destination='${PLASTER_PARAM_ApiName}\components'/>
+
+    <message>creating files...</message>
+    <templateFile source='Api\components\parameters.yaml' destination='${PLASTER_PARAM_ApiName}\components\parameters.yaml'/>
+    <templateFile source='Api\components\requestBodies.yaml' destination='${PLASTER_PARAM_ApiName}\components\requestBodies.yaml'/>
+    <templateFile source='Api\components\responses.yaml' destination='${PLASTER_PARAM_ApiName}\components\responses.yaml'/>
+    <templateFile source='Api\components\schemas.yaml' destination='${PLASTER_PARAM_ApiName}\components\schemas.yaml'/>
+    <templateFile source='Api\paths.yaml' destination='${PLASTER_PARAM_ApiName}\paths.yaml'/>
+    <templateFile source='Api\openapi.yaml' destination='${PLASTER_PARAM_ApiName}\openapi.yaml'/>
+  </content>
+</plasterManifest>
